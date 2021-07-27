@@ -9,7 +9,7 @@
            <p> Nome: <input type="text" v-model="nome" /><br /></p> 
            <p> Marca: <input type="text" v-model="marca" /><br /></p>
            <p> Ano de Fabricação: <input type="text" v-model="anoFabricacao" /><br /></p>
-           <p> Ano do modelo: <input type="text" v-model="anoModel" /><br /><br></p>
+           <p> Ano do modelo: <input type="text" v-model="anoModelo" /><br /><br></p>
            <p> Data de Venda: <input type="text" v-model="dataVenda" /><br /><br></p>
    </div>
 
@@ -26,7 +26,7 @@
           <p>Nome: {{ carros.nome }}</p>
           <p>Marca: {{ carros.marca }}</p>
           <p>Ano de Fabricação: {{ carros.anoFabricacao }}</p>
-          <p>Ano de Modelo: {{ carros.anoModel }}</p>
+          <p>Ano de Modelo: {{ carros.anoModelo }}</p>
           <p>Data de Venda: {{ carros.dataVenda }}</p>
         </div>
       </li>
@@ -45,10 +45,10 @@ export default {
       nome: "",
       marca: "",
       anoFabricacao:"",
-      anoModel:"",
+      anoModelo:"",
       dataVenda:"",
       carros: [],
-      baseURI: ""
+      baseURI: "http://localhost:3000/carros"
     }
   },
   
@@ -58,7 +58,7 @@ export default {
         nome: this.nome,
         marca: this.marca,
         anoFabricacao: this.anoFabricacao,
-        anoModel: this.anoModel,
+        anoModel: this.anoModelo,
         dataVenda: this.dataVenda,
       };
 
@@ -72,7 +72,7 @@ export default {
         nome: this.nome,
         marca: this.marca,
         anoFabricacao: this.anoFabricacao,
-        anoModel: this.anoModel,
+        anoModel: this.anoModelo,
         dataVenda: this.dataVenda,
       };
 

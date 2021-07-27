@@ -10,7 +10,7 @@
                         <p>Nome: {{ carro.nome }}</p>
                         <p>Marca: {{ carro.marca }}</p>
                         <p>Ano de Fabricação: {{ carro.anoFabricacao }}</p>
-                        <p>Ano de Modelo: {{ carro.anoModel }}</p>
+                        <p>Ano de Modelo: {{ carro.anoModelo }}</p>
                         <p>Data de Venda: {{ carro.dataVenda }}</p>
                         </div>
                     </li>
@@ -27,7 +27,7 @@
                 <p>Nome: {{ carrosId.nome }}</p>
                 <p>Marca: {{ carrosId.marca }}</p>
                 <p>Ano de Fabricação: {{ carrosId.anoFabricacao }}</p>
-                <p>Ano de Modelo: {{ carrosId.anoModel }}</p>
+                <p>Ano de Modelo: {{ carrosId.anoModelo }}</p>
                 <p>Data de Venda: {{ carrosId.dataVenda }}</p>
                 </div>
             </li>
@@ -44,7 +44,7 @@
                             <p>Nome: {{ carro.nome }}</p>
                             <p>Marca: {{ carro.marca }}</p>
                             <p>Ano de Fabricação: {{ carro.anoFabricacao }}</p>
-                            <p>Ano de Modelo: {{ carro.anoModel }}</p>
+                            <p>Ano de Modelo: {{ carro.anoModelo }}</p>
                             <p>Data de Venda: {{ carro.dataVenda }}</p>
                         </div>
                     </li>
@@ -61,7 +61,7 @@
                             <p>Nome: {{ carro.nome }}</p>
                             <p>Marca: {{ carro.marca }}</p>
                             <p>Ano de Fabricação: {{ carro.anoFabricacao }}</p>
-                            <p>Ano de Modelo: {{ carro.anoModel }}</p>
+                            <p>Ano de Modelo: {{ carro.anoModelo }}</p>
                             <p>Data de Venda: {{ carro.dataVenda }}</p>
                         </div>
                     </li>
@@ -79,14 +79,14 @@ export default {
             nome: "",
             marca: "",
             anoFabricacao:"",
-            anoModel:"",
+            anoModelo:"",
             dataVenda:"",
             quantidade:0,
             todosCarros: [],
             carrosId:[],
             carroMarca:[],
             carroQtd:[],
-            baseURI:""
+            baseURI:"http://localhost:3000/carros"
         }
     },
 
