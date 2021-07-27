@@ -2,7 +2,16 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 
 const routes = [
-  
+  {
+    path: "/",
+    name: "Buscar",
+    component: () => import("../views/Buscar.vue")
+  },
+  {
+    path: "/carros",
+    name:"Carros",
+    component: () => import("../views/Carros.vue")
+  }
 ]
 
 const router = createRouter({
