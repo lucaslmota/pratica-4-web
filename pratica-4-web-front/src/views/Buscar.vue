@@ -2,7 +2,7 @@
  <div class="campos">
 
           <h4>Mostrar todos os Carros</h4>
-            <button @click="todosCarros()">Todos os carros</button><br /><br />
+            <button @click="TodosCarros()">Todos os carros</button><br /><br />
                 <ul>
                     <li v-for="carro in todosCarros " :key="carro.id">
                         <div class="infor">
@@ -35,7 +35,7 @@
 
         <h4>Filtrar pela marca do carro</h4>
              <p> Marca: <input type="text" v-model="marca" /><br /></p>
-             <button @click="buscarCarroMarca()">Buscar carro pela marca</button><br /><br />
+             <button @click="BuscarCarroMarca()">Buscar carro pela marca</button><br /><br />
 
                 <ul>  
                     <li  v-for="carro in carroMarca " :key="carro.id" >
@@ -51,8 +51,8 @@
                 </ul>
         
         <h4>Filtrar por quantidade de Carros</h4>
-            Quantidade: <input type="number" v-model="quantidade" /><br /><br /><br>
-             <button @click="buscarCarroQuant()">Buscar por qtd de carros</button><br /><br />
+            Quantidade: <input type="text" v-model="qtd" /><br /><br /><br>
+             <button @click="BuscarCarroQuant()">Buscar por qtd de carros</button><br /><br />
 
               <ul>
                     <li  v-for="carro in carroQtd " :key="carro.id" >
@@ -81,17 +81,17 @@ export default {
             anoFabricacao:"",
             anoModel:"",
             dataVenda:"",
-            quantidade:0,
+            qtd:0,
             todosCarros: [],
             carrosId:[],
             carroMarca:[],
             carroQtd:[],
-            baseURI:""
+            baseURI:"http://localhost:3000/carros"
         }
     },
 
     methods: {
-        todosCarros(){
+        TodosCarros(){
             axios.get(this.baseURI).then((result) =>{
                 this.todosCarros = result.data
             })
@@ -106,8 +106,8 @@ export default {
             })
         },
 
-        buscarCarroMarca(){
-            axios.get(this.baseURI + "/searchMarca?marca=" + this.marca).then((result) =>{
+        BuscarCarroMarca(){
+            axios.get(this.baseURI + "/search?marca=" + this.marca).then((result) =>{
                 this.carroMarca = result.data
             })
             .catch(function(error) {
@@ -115,8 +115,8 @@ export default {
             })
         },
 
-        buscarCarroQuant(){
-            axios.get(this.baseURI + "/searchQTDCarro?quantidade=" + this.carroQtd).then((result) =>{
+        BuscarCarroQuant(){
+            axios.get(this.baseURI + "/" + this.qtd).then((result) =>{
                 this.carroQtd = result.data
             })
             .catch(function(error) {

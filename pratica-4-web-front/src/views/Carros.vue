@@ -14,9 +14,9 @@
    </div>
 
   <div class="butaos">
-    <button @click="postCarro()">Post Carro</button><br /><br />
-    <button @click="putCarro()">Put Carro</button><br /><br />
-    <button @click="deleteCarro()">Delete Carro</button><br /><br /> 
+    <button @click="PostCarro()">Post Carro</button><br /><br />
+    <button @click="PutCarro()">Put Carro</button><br /><br />
+    <button @click="DeleteCarro()">Delete Carro</button><br /><br /> 
   </div>
 
    <ul>
@@ -48,12 +48,12 @@ export default {
       anoModel:"",
       dataVenda:"",
       carros: [],
-      baseURI: ""
+      baseURI: "http://localhost:3000/carros"
     }
   },
   
   methods: {
-    postCarro(){
+    PostCarro(){
       let obj ={
         nome: this.nome,
         marca: this.marca,
@@ -67,8 +67,9 @@ export default {
       })
     },
 
-    putCarro(){
+    PutCarro(){
       let obj ={
+
         nome: this.nome,
         marca: this.marca,
         anoFabricacao: this.anoFabricacao,
@@ -76,13 +77,13 @@ export default {
         dataVenda: this.dataVenda,
       };
 
-      axios.put(this.baseURI, obj).then((result) =>{
-        this.carros = result.data
+      axios.put(this.baseURI+"/" + this.id, obj).then((result) =>{
+        console.log(result)
       })
     },
 
-    deleteCarro(){
-      axios.delete(this.baseURI +"/"+this.id).then((result) =>{})
+    DeleteCarro(){
+      axios.delete(this.baseURI +"/"+this.id,).then((result) =>{})
     }
   },
 }
