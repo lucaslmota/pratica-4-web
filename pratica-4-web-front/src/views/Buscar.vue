@@ -116,7 +116,7 @@ export default {
         },
 
         BuscarCarroQuant(){
-            axios.get(this.baseURI + "/" + this.qtd).then((result) =>{
+            axios.get(this.baseURI + "/procu?qtd=" + this.qtd).then((result) =>{
                 this.carroQtd = result.data
             })
             .catch(function(error) {

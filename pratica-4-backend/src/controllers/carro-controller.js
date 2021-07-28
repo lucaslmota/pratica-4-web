@@ -15,7 +15,7 @@ exports.getByMarca = (req, res) =>{
 };
 
 exports.getQtd = (req, res) =>{
-  res.json(carroService.getQtd(req.params.qtd));
+  res.json(carroService.getQtd(req.query.qtd));
 };
 
 exports.post = (req, res) => {
